@@ -1,4 +1,5 @@
 import React from "react";
+import image from "../images/user.png";
 import { Card, Button, Row, Col } from "react-bootstrap";
 
 const ContactCard = (props) => {
@@ -8,8 +9,18 @@ const ContactCard = (props) => {
     <Card>
       <Card.Body>
         <Row>
-          <Col>{name}</Col>
-          <Col>{email}</Col>
+          <Col xs={2} md={1} className="d-flex align-items-center">
+            <img
+              src={image}
+              alt="user image"
+              className="img-fluid rounded-circle"
+              style={{ maxWidth: "50px" }}
+            />
+          </Col>
+          <Col>
+            <div>{name}</div>
+            <div>{email}</div>
+          </Col>
           <Col className="text-right">
             <Button variant="danger">
               <i className="trash alternate outline icon" />
@@ -22,8 +33,6 @@ const ContactCard = (props) => {
 };
 
 export default ContactCard;
-
-
 
 // import React from "react";
 
