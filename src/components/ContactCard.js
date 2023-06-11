@@ -3,7 +3,9 @@ import image from "../images/user.png";
 import { Card, Button, Row, Col } from "react-bootstrap";
 
 const ContactCard = (props) => {
-  const { id, name, email } = props.contact;
+//   const { id, name, email } = props.contact;
+  const name = props.name;
+  const email=props.email;
 
   return (
     <Card>
@@ -22,7 +24,7 @@ const ContactCard = (props) => {
             <div>{email}</div>
           </Col>
           <Col className="text-right">
-            <Button variant="danger">
+            <Button variant="danger" onClick={()=>{props.clickHandler(props.id)}}>
               <i className="trash alternate outline icon" />
             </Button>
           </Col>
